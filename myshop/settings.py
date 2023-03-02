@@ -90,9 +90,9 @@ WSGI_APPLICATION = 'myshop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'wolfpack_db',
-        'USER': 'postgres',
-        'PASSWORD': 'QWasZX12',
+        'NAME': 'test_database',
+        'USER': 'test_user',
+        'PASSWORD': 'test_password',
         'HOST': 'localhost',
         'PORT': '5432',
     }
