@@ -1,7 +1,7 @@
 from shop.models import Product
 
 
-def get_available_product_by_id_and_slug(product_id, slug) -> Product:
+def get_available_product_by_id_and_slug(product_id: int, slug: str) -> Product:
     return Product.objects.filter(id=product_id, available=True, slug=slug).first()
 
 
