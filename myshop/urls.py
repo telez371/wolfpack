@@ -12,10 +12,10 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     #drf
-    # path('api-auth/', include('rest_framework.urls')),
+    # path('shop_api-auth/', include('rest_framework.urls')),
     # path('auth/', include('djoser.urls.jwt')),
-    # path('api/v1/', include('routers')),
-    path('api/', include('api.urls')),
+    # path('shop_api/v1/', include('routers')),
+    path('shop_api/', include('shop_api.urls')),
     path('orders/', include('orders.urls', namespace='orders')),
     path('cart/', include('cart.urls', namespace='cart')),
     path('coupons/', include('coupons.urls', namespace='coupons')),
