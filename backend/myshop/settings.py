@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': 'test_database',
         'USER': 'test_user',
         'PASSWORD': 'test_password',
-        'HOST': 'localhost',
+        'HOST': 'wolfpack-database',
         'PORT': '5432',
     }
 }
