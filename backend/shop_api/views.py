@@ -10,6 +10,8 @@ from .serializers import ProductSerializer
 from .serializers import CategorySerializer
 
 from shop.models import Category
+from shop.models import Product
+from rest_framework.filters import SearchFilter
 
 
 class ProductCardView(APIView):
@@ -23,7 +25,7 @@ class ProductCardView(APIView):
         return Response(product_card.data, status=status.HTTP_200_OK)
 
 
-class ProductListView(APIView):
+class ProductByCategoryListView(APIView):
 
     @staticmethod
     def get(request, category_slug: str) -> Response:
@@ -36,3 +38,10 @@ class ProductListView(APIView):
 class CatalogListView(ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+
+class ProductSearchView(ListAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    filter_backends = (SearchFilter,)
+    search_fields = ("name", "description", "category__name", "category__slug", "slug")
